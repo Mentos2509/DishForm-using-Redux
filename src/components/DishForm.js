@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function DishForm() {
+  const dishData = useSelector((state)=> state.dishData.value)
+  console.log(dishData)
+  
   return (
     <div>
       <form>
