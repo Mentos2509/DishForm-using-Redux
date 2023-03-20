@@ -1,78 +1,23 @@
 import React from "react";
-import styled, { css } from "styled-components";
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateDishData,
   selectDishData,
+  resetDishData
 } from "../store/features/dishDataSlice";
-import { toast } from "react-toastify";
-
-const InputStyled = styled.input`
-  border: 2px solid ${({ theme }) => theme.colors.light};
-  outline: 0;
-  border-radius: 0.7rem;
-  display: block;
-  width: 100%;
-  min-height: 5rem;
-  transition: border-color 0.25s ease 0s;
-  font-size: ${({ theme }) => theme.sizes.s};
-  margin-top: 0.5rem;
-  padding: 0 1.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: ${({ theme }) => theme.weights.medium};
-  font-family: inherit;
-`;
-
-const FormRowStyled = styled.div`
-  margin-top: 1.5rem;
-`;
-
-const LabelStyled = styled.label`
-  padding: 1.5rem 0;
-`;
-
-const FormStyled = styled.form`
-  max-width: 520px;
-  width: 100%;
-  margin: auto;
-`;
-
-const SelectStyled = styled.select`
-  border: 2px solid ${({ theme }) => theme.colors.light};
-  outline: 0;
-  border-radius: 0.7rem;
-  display: block;
-  width: 100%;
-  min-height: 5rem;
-  transition: border-color 0.25s ease 0s;
-  font-size: ${({ theme }) => theme.sizes.s};
-  margin-top: 0.5rem;
-  padding: 0 1.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: ${({ theme }) => theme.weights.medium};
-  font-family: inherit;
-`;
-
-const ButtonStyled = styled.button`
-  font-size: ${({ theme }) => theme.sizes.s};
-  font-weight: ${({ theme }) => theme.weights.medium};
-  font-family: inherit;
-  padding: 2rem;
-  margin: 2rem 0 0 0;
-  border-radius: 3px;
-  cursor: pointer;
-  background-color: ${({ theme }) => theme.colors.light};
-  border: ${({ theme }) => `1px solid ${theme.colors.light}`};
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-
-const InfoStyled = styled.p`
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: ${({ theme }) => theme.sizes.xs};
-  margin: 0.4rem 0 0 0;
-`;
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  InputStyled,
+  FormStyled,
+  LabelStyled,
+  FormRowStyled,
+  SelectStyled,
+  ButtonStyled,
+  InfoStyled,
+  OvalShapeStyled,
+} from "../styles/DishFormStyles";
 
 const DishForm = () => {
   const formData = useSelector(selectDishData);
@@ -89,14 +34,32 @@ const DishForm = () => {
       body: JSON.stringify(formData),
     })
       .then((response) => response.json())
-      .then((response) => {
-        const notify = () => toast("Wow so easy!");
-        return response ?? notify();
+      .then((data) => {
+        if (data.id) {
+          toast.success("Thank you for your Dish", {
+            position: toast.POSITION.TOP_RIGHT,
+            className: "toast-message",
+          });
+          dispatch(
+            resetDishData())
+        } else {
+          toast.error("Submitted dish was rejected", {
+            position: toast.POSITION.TOP_RIGHT,
+            className: "toast-message",
+          });
+        }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.log(error);
+        toast.success("There was an error with your order", {
+          position: toast.POSITION.TOP_RIGHT,
+          className: "toast-message",
+        });
+      });
   };
   return (
     <div>
+      <OvalShapeStyled />
       <FormStyled onSubmit={handleSubmit}>
         <FormRowStyled>
           <LabelStyled htmlFor="name">Name</LabelStyled>
@@ -241,6 +204,7 @@ const DishForm = () => {
           </FormRowStyled>
         )}
         <ButtonStyled type="submit">Send your Order</ButtonStyled>
+        <ToastContainer />
       </FormStyled>
     </div>
   );

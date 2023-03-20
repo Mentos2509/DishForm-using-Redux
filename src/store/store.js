@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./features/dishDataSlice";
+import dishDataReducer from "./features/dishDataSlice";
 
 export const store = configureStore({
   reducer: {
-    dishData: userReducer,
+    dishData: dishDataReducer,
   },
 });

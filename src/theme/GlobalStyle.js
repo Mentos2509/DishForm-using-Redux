@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   *:before,
   *:after {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
   }
 
   html {
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.primary};
     line-height: 1.3;
     min-height: 620px;
+    background-color: hsl(0deg 0% 0% / 2%);
   }
 `;
 

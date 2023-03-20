@@ -1,20 +1,16 @@
 export const ThemeConfig = {
   font: {
-    family: "'montserrat', sans-serif",
+    family: "'Roboto', sans-serif",
   },
-  grid: {
-    padding: "1.5rem",
-    width: `100%`,
-    columns: "6",
-    gutter: "1.5rem",
-  },
+
   colors: {
     white: "hsl(225, 100%, 100%)",
     light: "hsl(232, 6%, 90%)",
     gray: "hsl(231, 11%, 63%)",
-    primary: "hsl(213, 96%, 18%)",
+    primary: "hsl(240, 2%, 10%)",
     secondary: "hsl(206, 94%, 87%)",
     danger: "hsl(354, 84%, 57%)",
+    green: "hsl(135, 15%, 58%);",
   },
   sizes: {
     base: "10px",
@@ -26,14 +22,6 @@ export const ThemeConfig = {
   },
   weights: {
     light: "300",
-    regular: "400",
-    medium: "500",
-    bold: "600",
-    extrabold: "900",
-  },
-  spacers: {
-    "0": "0",
-    "5": "5px",
-    "15": "15px",
+    bold: "700",
   },
 };
