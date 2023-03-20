@@ -1,7 +1,7 @@
 # Welcome to the Dish Form Project
 ---
 
-#### To access page please click on the link below: [Dish Form]()
+#### To access page please click on the link below: [Dish Form](https://mentos2509.github.io/HexOcean-Interview-Project/)
 
 ---
 
@@ -18,6 +18,7 @@ The goal of this project was to create the Dish Form and submit it via POST
 - CSS
 - HTML5
 - NPM Packages
+- GH-Pages
 
 ##### How run this project :
     1. Copy repository.
