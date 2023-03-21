@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HexOcean-Interview-Project/static/css/main.f1ee5fba.css",
-    "main.js": "/HexOcean-Interview-Project/static/js/main.b985690e.js",
+    "main.js": "/HexOcean-Interview-Project/static/js/main.4208e571.js",
     "index.html": "/HexOcean-Interview-Project/index.html",
     "main.f1ee5fba.css.map": "/HexOcean-Interview-Project/static/css/main.f1ee5fba.css.map",
-    "main.b985690e.js.map": "/HexOcean-Interview-Project/static/js/main.b985690e.js.map"
+    "main.4208e571.js.map": "/HexOcean-Interview-Project/static/js/main.4208e571.js.map"
   },
   "entrypoints": [
     "static/css/main.f1ee5fba.css",
-    "static/js/main.b985690e.js"
+    "static/js/main.4208e571.js"
   ]
 }
