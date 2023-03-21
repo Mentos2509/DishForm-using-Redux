@@ -7,12 +7,11 @@ export const InputStyled = styled.input`
   display: block;
   width: 100%;
   min-height: 5rem;
-  transition: border-color 0.25s ease 0s;
   font-size: ${({ theme }) => theme.sizes.s};
   margin-top: 0.5rem;
   padding: 0 1.5rem;
   color: ${({ theme }) => theme.colors.primary};
-  font-weight: ${({ theme }) => theme.weights.medium};
+  font-weight: ${({ theme }) => theme.weights.light};
 `;
 
 export const FormRowStyled = styled.div`
@@ -20,7 +19,8 @@ export const FormRowStyled = styled.div`
 `;
 
 export const LabelStyled = styled.label`
-  padding: 1.5rem 0;
+  display: block;
+  margin-bottom: .5rem;
 `;
 
 export const FormStyled = styled.form`
@@ -35,25 +35,22 @@ export const SelectStyled = styled.select`
   border-radius: 0.7rem;
   width: 100%;
   min-height: 5rem;
-  transition: border-color 0.25s ease 0s;
   font-size: ${({ theme }) => theme.sizes.s};
   margin-top: 0.5rem;
   padding: 0 1.5rem;
   color: ${({ theme }) => theme.colors.primary};
-  font-weight: ${({ theme }) => theme.weights.medium};
+  font-weight: ${({ theme }) => theme.weights.light};
 `;
 
 export const ButtonStyled = styled.button`
   font-size: ${({ theme }) => theme.sizes.s};
-  font-weight: ${({ theme }) => theme.weights.medium};
+  font-weight: ${({ theme }) => theme.weights.light};
   padding: 2rem;
   margin: 2rem 0 0 0;
   border-radius: 3px;
   cursor: pointer;
   background-color: ${({ theme }) => theme.colors.light};
   border: ${({ theme }) => `1px solid ${theme.colors.light}`};
-  align-items: center;
-  justify-content: center;
   width: 100%;
   transition: background-color 0.2s ease;
   &:hover {
@@ -70,5 +67,3 @@ export const InfoStyled = styled.p`
 export const ContainerStyled = styled.div`
   padding: 0 1.5rem;
 `;
-
-export const OvalShapeStyled = styled.div``;

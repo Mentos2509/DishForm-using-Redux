@@ -1,10 +1,9 @@
 import React from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateDishData,
   selectDishData,
-  resetDishData
+  resetDishData,
 } from "../store/features/dishDataSlice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,7 +15,7 @@ import {
   SelectStyled,
   ButtonStyled,
   InfoStyled,
-  OvalShapeStyled,
+  ContainerStyled,
 } from "../styles/DishFormStyles";
 
 const DishForm = () => {
@@ -40,8 +39,7 @@ const DishForm = () => {
             position: toast.POSITION.TOP_RIGHT,
             className: "toast-message",
           });
-          dispatch(
-            resetDishData())
+          dispatch(resetDishData());
         } else {
           toast.error("Submitted dish was rejected", {
             position: toast.POSITION.TOP_RIGHT,
@@ -57,9 +55,9 @@ const DishForm = () => {
         });
       });
   };
+
   return (
-    <div>
-      <OvalShapeStyled />
+    <ContainerStyled>
       <FormStyled onSubmit={handleSubmit}>
         <FormRowStyled>
           <LabelStyled htmlFor="name">Name</LabelStyled>
@@ -93,7 +91,7 @@ const DishForm = () => {
               );
             }}
           />
-          <InfoStyled>hh:mm:ss</InfoStyled>
+          <InfoStyled>Insert the time in format hh:mm:ss</InfoStyled>
         </FormRowStyled>
         <FormRowStyled>
           <LabelStyled htmlFor="type">Type</LabelStyled>
@@ -114,6 +112,7 @@ const DishForm = () => {
             <option value="sandwich">Sandwich</option>
           </SelectStyled>
         </FormRowStyled>
+
         {formData.type === "pizza" && (
           <>
             <FormRowStyled>
@@ -134,7 +133,7 @@ const DishForm = () => {
                 min="1"
                 max="20"
               />
-              <InfoStyled>Number of slices (1-8)</InfoStyled>
+              <InfoStyled>Choose number of slices (1-8)</InfoStyled>
             </FormRowStyled>
             <FormRowStyled>
               <LabelStyled htmlFor="diameter">Diameter</LabelStyled>
@@ -155,10 +154,11 @@ const DishForm = () => {
                 min="20"
                 max="40"
               />
-              <InfoStyled>Diameter range (20cm-40cm)</InfoStyled>
+              <InfoStyled>Choose diameter (20cm-40cm)</InfoStyled>
             </FormRowStyled>
           </>
         )}
+
         {formData.type === "soup" && (
           <FormRowStyled>
             <LabelStyled htmlFor="spiciness_scale">Spiciness Scale</LabelStyled>
@@ -181,6 +181,7 @@ const DishForm = () => {
             <InfoStyled>Choose spiciness from (1-10)</InfoStyled>
           </FormRowStyled>
         )}
+
         {formData.type === "sandwich" && (
           <FormRowStyled>
             <LabelStyled htmlFor="slices_of_bread">Slices of Bread</LabelStyled>
@@ -206,7 +207,7 @@ const DishForm = () => {
         <ButtonStyled type="submit">Send your Order</ButtonStyled>
         <ToastContainer />
       </FormStyled>
-    </div>
+    </ContainerStyled>
   );
 };
 

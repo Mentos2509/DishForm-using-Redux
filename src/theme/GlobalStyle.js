@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.primary};
     line-height: 1.3;
     min-height: 620px;
-    background-color: hsl(0deg 0% 0% / 2%);
+    background-color: hsl(0 0% 0% / 2%);
   }
 `;
 
