@@ -9,16 +9,17 @@ The goal of this project was to create the Dish Form and submit it via POST
 
 ##### Used technologies:
 
+- Node v18.12.1
+- NPM Packages 9.6.2
 - React
-- JavaScript
 - Redux
 - Styled-Components
+- JavaScript
 - Reset-CSS
 - React-Toastify
 - CSS
-- HTML5
-- NPM Packages
 - GH-Pages
+- HTML5
 
 ##### How run this project :
     1. Copy repository.
