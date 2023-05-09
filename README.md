@@ -1,7 +1,7 @@
 # Welcome to the Dish Form Project
 ---
 
-#### To access page please click on the link below: [Dish Form](https://mentos2509.github.io/HexOcean-Interview-Project/)
+#### To access page please click on the link below: [Dish Form](https://mentos2509.github.io/DishForm-using-Redux/)
 
 ---
 
