@@ -5,7 +5,7 @@
 
 ---
 
-The goal of this project was to create the Dish Form and submit it via POST
+The goal of this project was to create the Dish Form and submit it via POST using the HTTP method.
 
 ##### Used technologies:
 
